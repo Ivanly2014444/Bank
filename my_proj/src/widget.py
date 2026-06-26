@@ -22,3 +22,12 @@ def mask_account_card(account_card: str) -> str:
 
 user_card = input("Введите название номер карты через пробел: ")
 print(mask_account_card(user_card))
+
+def get_date(date_string: str) -> str:
+    year = date_string [:4]
+    month = date_string [5:7]
+    day = date_string [8:10]
+    return f'{day}.{month}.{year}'
+
+user_input = input("Введите дату  (например: 2024-03-11T02:26:18.671407): ")
+print("Результат:", get_date(user_input))
