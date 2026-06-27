@@ -1,5 +1,5 @@
 def get_mask_card_number(card_number: str) -> str:
-    """ Функция принимает на вход номер карты и возвращает ее маску """
+    """Функция принимает на вход номер карты и возвращает ее маску"""
     card_start = card_number[0:6]
     card_end = card_number[-4:]
     hidden_part = card_number[6:-4]
@@ -15,7 +15,7 @@ def get_mask_card_number(card_number: str) -> str:
 
 
 def get_mask_account(account_number: str) -> str:
-    """ Функция принимает на вход номер счета и возвращает ее маску """
+    """Функция принимает на вход номер счета и возвращает ее маску"""
     account_end = account_number[-4:]
     stars_mask = "**"
 
@@ -24,8 +24,3 @@ def get_mask_account(account_number: str) -> str:
     return masked_account
 
 
-user_card = input("Введите номер карты: ")
-print(get_mask_card_number(user_card))
-
-user_account = input("Введите номер счета: ")
-print(get_mask_account(user_account))
