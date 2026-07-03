@@ -1,4 +1,5 @@
 def filter_by_state(data: list[dict], state: str="EXECUTED") -> list[dict]:
+    """Фильтрует список словарей по значению ключа 'state'."""
     result = []
     for item in data:
         if item.get("state") == state:
@@ -7,6 +8,7 @@ def filter_by_state(data: list[dict], state: str="EXECUTED") -> list[dict]:
 
 
 def sort_by_date(data: list[dict], descending: bool = True) -> list[dict]:
+    """Сортирует список словарей по убыванию"""
     return sorted(data, key=lambda x: x["date"], reverse=descending)
 
 
