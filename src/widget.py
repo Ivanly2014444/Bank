@@ -2,12 +2,13 @@ import re
 
 from masks import get_mask_account, get_mask_card_number
 
+
 def mask_account_card(account_card: str) -> str:
 
-    number_match = re.search(r'\d+', account_card)
+    number_match = re.search(r"\d+", account_card)
     number = number_match.group() if number_match else ""
 
-    name_match = re.search(r'\D+', account_card)
+    name_match = re.search(r"\D+", account_card)
     name_card = name_match.group().strip() if name_match else ""
 
     """Функция принимает номер счета или карты, маскируя их"""
@@ -36,4 +37,3 @@ def get_date(date_string: str) -> str:
 
 user_input = input("Введите дату  (например: 2024-03-11T02:26:18.671407): ")
 print("Результат:", get_date(user_input))
-
