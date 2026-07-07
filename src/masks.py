@@ -22,5 +22,3 @@ def get_mask_account(account_number: str) -> str:
     masked_account = stars_mask + account_end
 
     return masked_account
-
-
