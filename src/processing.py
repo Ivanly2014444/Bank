@@ -15,8 +15,7 @@ def sort_by_date(
     """Сортирует список словарей по убыванию"""
     return sorted(data, key=lambda x: str(x["date"]), reverse=descending)
 
-
-#if __name__ == "__main__":
+    # if __name__ == "__main__":
     # 1. Создаем тестовый список словарей
     test_data: list[dict[str, str | int]] = [
         {

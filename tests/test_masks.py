@@ -1,6 +1,6 @@
 import pytest
 
-from src.masks import get_mask_card_number, get_mask_account
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def test_get_mask_card_number(card_number_example: str):
@@ -22,6 +22,7 @@ def test_get_mask_card_number_wrong_length_raises_error():
     """Тест проверяет, что при неверной длине номера карты выбрасывается ValueError."""
     with pytest.raises(ValueError):
         get_mask_card_number("12345")
+
 
 def test_get_mask_account_number_wrong_length_raises_error():
     with pytest.raises(ValueError):

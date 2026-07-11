@@ -1,10 +1,8 @@
-import re
 
 from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(account_card: str) -> str:
-
     """Маскирует номер карты или счета вместе с его названием."""
     if not account_card:
         raise ValueError("Строка не должна быть пустой")
@@ -37,7 +35,7 @@ def get_date(date_string: str) -> str:
 
     # Необходим ISO формат: минимум 10 символов ГГГГ-ММ-ДД)
     if len(date_string) < 10 or date_string[4] != "-" or date_string[7] != "-":
-            raise ValueError("Неверный формат даты. Ожидается ГГГГ-ММ-ДД")
+        raise ValueError("Неверный формат даты. Ожидается ГГГГ-ММ-ДД")
 
     year = date_string[:4]
     month = date_string[5:7]
@@ -48,4 +46,3 @@ def get_date(date_string: str) -> str:
         raise ValueError("Компоненты даты должны содержать только цифры")
 
     return f"{day}.{month}.{year}"
-
