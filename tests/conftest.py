@@ -1,5 +1,7 @@
 import pytest
 
+from src.widget import mask_account_card
+
 
 @pytest.fixture
 def card_number_example() -> str:
@@ -11,3 +13,4 @@ def card_number_example() -> str:
 def account_number_example() -> str:
     """Фикстура, возвращающая тестовый номер счета."""
     return "12345543216789009876"
+
