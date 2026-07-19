@@ -20,6 +20,9 @@ lint = [
     "isort (>=8.0.1,<9.0.0)",
     "mypy (>=2.1.0,<3.0.0)"
 ]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)"
+]
 
 [tool.black]
 line-length = 88
@@ -51,10 +54,14 @@ skip = [".venv"]
 
 [tool.mypy]
 python_version = "3.14"
-mypy_path = "src"
 namespace_packages = true
 explicit_package_bases = true
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
 check_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+
