@@ -67,7 +67,7 @@ def filter_by_currency(data, currency_code):
     return [
         t
         for t in data
-        if t.get("operationAmount", {}).get("currency", {}).get("code").upper()
+        if t.get("operationAmount", {}).get("currency", {}).get("code", "").upper()
         == currency_code.upper()
     ]
 

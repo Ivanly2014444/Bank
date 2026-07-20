@@ -1,6 +1,6 @@
 import pytest
 
-from generator import (
+from src.generator import (
     card_number_generator,
     filter_by_currency,
     transaction_descriptions,
