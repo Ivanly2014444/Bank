@@ -64,12 +64,11 @@ transactions = [
 
 def filter_by_currency(data, currency_code):
     """Функция принимает список словарей и фильтрует их по валюте"""
-    return [
-        t
-        for t in data
+    return (
+        t for t in data
         if t.get("operationAmount", {}).get("currency", {}).get("code", "").upper()
         == currency_code.upper()
-    ]
+)
 
 
 def transaction_descriptions(data):

@@ -10,25 +10,27 @@ from src.generator import (
 def test_filter_by_currency(test_transactions):
     """Проверяет фильтрацию транзакций по валюте USD в верхнем регистре."""
     result = filter_by_currency(test_transactions, "USD")
-
+    result_list = list(result)
     # Проверяем, что в списке ровно 3 транзакции (для USD)
-    assert len(result) == 3
+    assert len(result_list) == 3
     # Проверяем, что id соответсвует действительному
-    assert result[0]["id"] == 939719570
-    assert result[1]["id"] == 142264268
-    assert result[2]["id"] == 895315941
+    assert result_list[0]["id"] == 939719570
+    assert result_list[1]["id"] == 142264268
+    assert result_list[2]["id"] == 895315941
 
 
 def test_filter_by_currency_lowercase(test_transactions):
     """Проверяет регистронезависимость фильтра при передаче валюты в нижнем регистре."""
     result = filter_by_currency(test_transactions, "usd")
-    assert len(result) == 3
+    result_list = list(result)
+    assert len(result_list) == 3
 
 
 def test_filter_by_currency_empty(test_transactions):
     """Проверяет, что функция возвращает пустой список при отсутствии совпадений по валюте."""
     result = filter_by_currency(test_transactions, "RRR")
-    assert result == []
+    result_list = list(result)
+    assert result_list == []
 
 
 @pytest.mark.parametrize(
