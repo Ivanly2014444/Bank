@@ -28,5 +28,3 @@ def test_get_financial_data_empty_file(tmp_path):
 
     result = get_financial_data(str(test_file))
     assert result == []
-
-
