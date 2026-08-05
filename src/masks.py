@@ -1,5 +1,7 @@
 def get_mask_card_number(card_number: str) -> str:
     """Функция принимает на вход номер карты и возвращает ее маску"""
+    if len(card_number) != 16:
+        raise ValueError("Номер карты должен состоять из 16 цифр")
     card_start = card_number[0:6]
     card_end = card_number[-4:]
     hidden_part = card_number[6:-4]
@@ -16,6 +18,8 @@ def get_mask_card_number(card_number: str) -> str:
 
 def get_mask_account(account_number: str) -> str:
     """Функция принимает на вход номер счета и возвращает ее маску"""
+    if len(account_number) != 20:
+        raise ValueError("Номер счета должен состоять из 20 цифр")
     account_end = account_number[-4:]
     stars_mask = "**"
 
