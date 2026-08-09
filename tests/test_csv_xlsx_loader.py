@@ -15,10 +15,12 @@ def test_xlsx_reading(mock_read_excel):
 
     assert result == [{"id": 325, "status": "OK"}]
 
+@patch("src.file_readers.pd.read_excel")
+def test_xlsx_file_not_found(mock_read_excel):
 
-def test_xlsx_file_not_found():
     """ Файл xlsx не существует """
 
+    mock_read_excel.side_effect = FileNotFoundError
     result = read_transactions_xlsx("no/no/no_file.xlsx")
 
     assert result == []

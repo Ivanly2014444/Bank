@@ -15,10 +15,12 @@ def test_csv_reading(mock_read_csv):
 
     assert result == [{"id": 777, "status": "OK"}]
 
+@patch("src.file_readers.pd.read_csv")
+def test_csv_file_not_found(mock_read_csv):
 
-def test_csv_file_not_found():
     """ Файл CSV не существует """
 
+    mock_read_csv.side_effect = FileNotFoundError
     result = read_transactions_csv("no/no/no_file.csv")
 
     assert result == []
