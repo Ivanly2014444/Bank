@@ -1,4 +1,5 @@
 import os
+
 import pandas as pd
 
 
@@ -16,7 +17,8 @@ def read_transactions_csv(file_path: str) -> list:
     except Exception:
         return []
 
-#Проверка на работоспособность
+
+# Проверка на работоспособность
 # if __name__ == "__main__":
 #
 #     csv_path = os.path.join("..","data", "transactions.csv")
