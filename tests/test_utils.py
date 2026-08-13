@@ -1,6 +1,6 @@
 import json
 
-from src.utils import get_financial_data
+from src.utils import get_financial_data, process_bank_search, process_bank_operations
 
 
 def test_get_financial_data_success(tmp_path):
@@ -30,3 +30,26 @@ def test_get_financial_data_empty_file(tmp_path):
     assert result == []
 
 
+def test_process_bank_search(sample_operations):
+    """Тест для функции поиска по описанию"""
+    result = process_bank_search(sample_operations, "перевод")
+    assert len(result) == 2
+    assert result[0]["id"] == 1
+    assert result[1]["id"] == 3
+
+
+def test_process_bank_search_no_results(sample_operations):
+
+    result = process_bank_search(sample_operations, "Снятие наличных")
+    assert result == []
+
+
+def test_process_bank_operations(sample_operations):
+    """Тест для функции подсчета категорий через Counter"""
+    categories = ["Перевод", "Оплата", "Вклад"]
+    result = process_bank_operations(sample_operations, categories)
+
+    # Проверяем корректность подсчета
+    assert result["Перевод"] == 2
+    assert result["Оплата"] == 1
+    assert result["Вклад"] == 0

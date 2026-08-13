@@ -114,3 +114,13 @@ def test_transactions():
             "to": "Счет 14211924144426031657",
         },
     ]
+
+
+@pytest.fixture
+def sample_operations():
+    return [
+        {"id": 1, "description": "Перевод организации"},
+        {"id": 2, "description": "Оплата услуг связи"},
+        {"id": 3, "description": "ПЕРЕВОД другу"},
+        {"id": 4, "description": "Покупка продуктов"},
+    ]
