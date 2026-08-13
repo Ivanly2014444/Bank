@@ -1,6 +1,6 @@
-2026-08-09 15:08:22,881 - src.utils - INFO: Попытка чтения файла: C:\Users\user\AppData\Local\Temp\pytest-of-user\pytest-24\test_get_financial_data_succes0\operations.json
-2026-08-09 15:08:22,882 - src.utils - INFO: Данные успешно прочитаны из файла
-2026-08-09 15:08:22,884 - src.utils - INFO: Попытка чтения файла: non_existent_file.json
-2026-08-09 15:08:22,884 - src.utils - ERROR: Файл не найден по пути: non_existent_file.json
-2026-08-09 15:08:22,887 - src.utils - INFO: Попытка чтения файла: C:\Users\user\AppData\Local\Temp\pytest-of-user\pytest-24\test_get_financial_data_empty_0\empty.json
-2026-08-09 15:08:22,887 - src.utils - ERROR: C:\Users\user\AppData\Local\Temp\pytest-of-user\pytest-24\test_get_financial_data_empty_0\empty.json не является правильным JSON-текстом
+2026-08-13 13:31:15,384 - src.utils - INFO: Попытка чтения файла: C:\Users\user\AppData\Local\Temp\pytest-of-user\pytest-26\test_get_financial_data_succes0\operations.json
+2026-08-13 13:31:15,385 - src.utils - INFO: Данные успешно прочитаны из файла
+2026-08-13 13:31:15,386 - src.utils - INFO: Попытка чтения файла: non_existent_file.json
+2026-08-13 13:31:15,386 - src.utils - ERROR: Файл не найден по пути: non_existent_file.json
+2026-08-13 13:31:15,389 - src.utils - INFO: Попытка чтения файла: C:\Users\user\AppData\Local\Temp\pytest-of-user\pytest-26\test_get_financial_data_empty_0\empty.json
+2026-08-13 13:31:15,389 - src.utils - ERROR: C:\Users\user\AppData\Local\Temp\pytest-of-user\pytest-26\test_get_financial_data_empty_0\empty.json не является правильным JSON-текстом
